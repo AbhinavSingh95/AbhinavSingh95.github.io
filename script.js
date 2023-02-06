@@ -1,4 +1,5 @@
 const form = document.getElementById("contact-form");
+const submitBtn = document.getElementById("submit-btn");
 let theme = localStorage.getItem("theme");
 
 if (theme == null) {
