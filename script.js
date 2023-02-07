@@ -47,7 +47,6 @@ function formSubmit(e) {
         },
     })
         .then((response) => {
-            console.log(response);
             form.reset();
         })
         .catch((error) => console.log(error));
