@@ -561,6 +561,7 @@ h6 {
 .post-title {
     color: black;
     margin: 0;
+    text-align: center;
 }
 
 .post-intro {
