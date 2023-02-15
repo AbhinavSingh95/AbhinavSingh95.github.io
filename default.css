@@ -703,6 +703,12 @@ h6 {
     }
 }
 
+@media screen and (max-width: 1000px) {
+    .flow {
+        min-height: 400px !important;
+    }
+}
+
 @media screen and (max-width: 800px) {
     .intro-wrapper {
         grid-template-columns: 1fr;
@@ -721,7 +727,7 @@ h6 {
     }
 
     .flow {
-        min-height: 420px !important;
+        min-height: 500px !important;
     }
 
     .container {
@@ -781,7 +787,7 @@ h6 {
 
 @media screen and (max-width: 600px) {
     .flow {
-        min-height: 520px !important;
+        min-height: 600px !important;
     }
 
 }
@@ -799,7 +805,7 @@ h6 {
     }
 
     .flow {
-        min-height: 600px !important;
+        min-height: 640px !important;
     }
 }
 
