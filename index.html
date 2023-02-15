@@ -32,6 +32,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     </head>
     <body>
+        <div id="preloader"></div>
         <section class="s1">
             <div class="main-container">
                 <div class="greeting-wrapper">
@@ -665,7 +666,11 @@
                 </form>
             </div>
         </section>
-
+        <script>
+            $(window).on("load", function () {
+                $("#preloader").delay(2000).fadeOut("slow");
+            });
+        </script>
         <script type="text/javascript" src="script.js"></script>
         <script type="text/javascript" src="btn.js"></script>
     </body>
