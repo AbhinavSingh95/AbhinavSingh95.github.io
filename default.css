@@ -1247,10 +1247,8 @@ h6 {
     max-width: 800px;
 }
 
-.container .content__section ul li::marker {
-    content: '▹ ';
-    color: var(--linkColor);
-    font-size: 1.2em;
+.container .content__section ul {
+    list-style-type: '🔹 ';
 }
 
 .container .content__section ul li:not(:last-child) {
