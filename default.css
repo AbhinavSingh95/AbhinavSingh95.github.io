@@ -1248,7 +1248,9 @@ h6 {
 }
 
 .container .content__section ul li::marker {
-    content: '🔹 ';
+    content: '▹ ';
+    color: var(--linkColor);
+    font-size: 1.2em;
 }
 
 .container .content__section ul li:not(:last-child) {
