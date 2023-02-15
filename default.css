@@ -13,6 +13,7 @@
     --previewShadow: #f0ead6;
 
     --buttonColor: #FAFBFC;
+    --linkColor: #17a2b8;
 }
 
 html,
@@ -49,7 +50,7 @@ textarea {
 
 a {
     text-decoration: none;
-    color: #17a2b8;
+    color: var(--linkColor);
 }
 
 ul {
@@ -361,6 +362,7 @@ h6 {
 .wall {
     display: flex;
     justify-content: right;
+    padding-top: 50px;
 }
 
 .v-boxes {
@@ -713,6 +715,75 @@ h6 {
     .right-column {
         justify-content: center;
     }
+
+    .wall {
+        justify-content: center;
+    }
+
+    .flow {
+        min-height: 420px !important;
+    }
+
+    .container {
+        display: block !important;
+    }
+
+    .container .tabs {
+        display: flex !important;
+        width: inherit !important;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .content {
+        padding-left: 0 !important;
+    }
+
+    .content__section {
+        padding-left: 0 !important;
+    }
+
+    .tab {
+        border-bottom: 2px solid #5f6368;
+        border-left: none !important;
+        width: calc(100% / 4) !important;
+    }
+
+    .highlighter {
+        height: 2px !important;
+        width: calc(100% / 4) !important;
+        top: 60px !important;
+        transform: translateX(0px) !important;
+
+    }
+
+    .container .tabs .tab.tab-1.active~.highlighter {
+        transform: translateX(0px) !important;
+    }
+
+    .container .tabs .tab.tab-2.active~.highlighter {
+        transform: translateX(100%) !important;
+    }
+
+    .container .tabs .tab.tab-3.active~.highlighter {
+        transform: translateX(200%) !important;
+    }
+
+    .container .tabs .tab.tab-4.active~.highlighter {
+        transform: translateX(300%) !important;
+    }
+
+    #work__heading {
+        margin-bottom: 14px !important;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .flow {
+        min-height: 520px !important;
+    }
+
 }
 
 @media screen and (max-width: 400px) {
@@ -725,6 +796,10 @@ h6 {
 
     #preview {
         width: 280px;
+    }
+
+    .flow {
+        min-height: 600px !important;
     }
 }
 
@@ -1047,4 +1122,165 @@ h6 {
     100% {
         padding-left: 6px;
     }
+}
+
+
+
+
+.selected {
+    background-color: var(--previewShadow);
+}
+
+.container {
+    position: relative;
+    margin: 20px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .tabs {
+    display: block;
+    position: relative;
+    z-index: 3;
+    width: max-content;
+}
+
+.container .tabs .tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 10px 0;
+    transition: all 0.25s ease;
+    border-left: 2px solid #5f6368;
+}
+
+.tabs .tab span {
+    cursor: pointer;
+}
+
+.container .tabs .tab:hover {
+    background-color: var(--previewShadow);
+}
+
+.container .tabs .tab.active {
+    color: #fff;
+}
+
+.container .tabs .tab.tab-1.active~.highlighter {
+    transform: translateY(0px);
+}
+
+.container .tabs .tab.tab-2.active~.highlighter {
+    transform: translateY(60px);
+}
+
+.container .tabs .tab.tab-3.active~.highlighter {
+    transform: translateY(120px);
+}
+
+.container .tabs .tab.tab-4.active~.highlighter {
+    transform: translateY(180px);
+}
+
+.container .tabs .highlighter {
+    display: block;
+    background: var(--borderColor);
+    width: 2px;
+    height: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateY(0);
+    transition: transform 0.2s ease;
+    transition-delay: 0.1s;
+    z-index: 10;
+}
+
+.container .tabs div:first-of-type {
+    border-top-left-radius: 2px;
+}
+
+.container .tabs div:last-of-type {
+    border-top-right-radius: 2px;
+}
+
+.container .content {
+    position: relative;
+    padding: 0 15px;
+    height: 240px;
+}
+
+.container .content__section {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    opacity: 0;
+    z-index: 0;
+    transition: opacity 0s ease;
+}
+
+.container .content__section p,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+.container .content__section ul {
+    padding: 0;
+    margin-left: 25px;
+}
+
+.container .content__section ul li {
+    max-width: 800px;
+}
+
+.container .content__section ul li::marker {
+    content: '🔹 ';
+}
+
+.container .content__section ul li:not(:last-child) {
+    margin-bottom: 5px;
+}
+
+.container .content__section.visible {
+    position: relative;
+    opacity: 1;
+    width: 100%;
+    height: auto;
+    transition: opacity 0.5s ease;
+    z-index: 2;
+}
+
+/* Organization date range */
+#date-range {
+    font-size: 10px;
+
+}
+
+/* Underline Slidein Animation */
+.inline-link {
+    position: relative;
+}
+
+.inline-link::before {
+    content: "";
+    background-color: var(--linkColor);
+    transition: 0.4s ease-out;
+    width: 0%;
+    height: 2px;
+
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+}
+
+.inline-link:hover::before {
+    width: 100%;
 }
