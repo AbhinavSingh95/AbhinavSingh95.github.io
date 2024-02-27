@@ -1264,6 +1264,13 @@ h6 {
     z-index: 2;
 }
 
+/* Organization experience description */
+#experience-description {
+    padding: 0;
+    margin-top: 7px;
+    max-width: 800px;
+}
+
 /* Organization date range */
 #date-range {
     font-size: 10px;
