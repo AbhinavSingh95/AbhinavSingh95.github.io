@@ -575,8 +575,8 @@ h6 {
     display: block;
     max-width: 600px;
     margin: 0 auto;
-    border: 1px solid var(--borderColor);
     padding: 15px;
+    border: 1px solid var(--borderColor);
     border-radius: 5px;
     background-color: var(--mainColor);
     margin-bottom: 50px;
@@ -592,10 +592,9 @@ h6 {
 }
 
 .input-field {
-    width: 100%;
+    width: 98%;
     padding-top: 10px;
     padding-bottom: 10px;
-    margin-right: 10;
     background-color: var(--secondaryColor);
     border-radius: 5px;
     border: 1px solid var(--borderColor);
