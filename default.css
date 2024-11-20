@@ -12,7 +12,7 @@
     --previewBg: rgb(251, 249, 243, 0.8);
     --previewShadow: #f0ead6;
 
-    --buttonColor: #FAFBFC;
+    --buttonColor: #fafbfc;
     --linkColor: #17a2b8;
 }
 
@@ -397,13 +397,13 @@ h6 {
     cursor: pointer;
 }
 
-.box:hover:not(.link)>.box-face,
-.box:hover>.box-back {
+.box:hover:not(.link) > .box-face,
+.box:hover > .box-back {
     transform: translateZ(100px) rotateX(180deg);
     background-color: transparent;
 }
 
-.box:hover:not(.link)>.box-face>.box-text {
+.box:hover:not(.link) > .box-face > .box-text {
     opacity: 0;
 }
 
@@ -412,15 +412,15 @@ h6 {
     opacity: 1;
 }
 
-.box:hover.link>.box-face {
+.box:hover.link > .box-face {
     background-color: transparent;
 }
 
-.box:hover.link>.box-face>.box-text {
+.box:hover.link > .box-face > .box-text {
     color: #323232;
 }
 
-.box.link>.box-face {
+.box.link > .box-face {
     background-color: #323232;
     border: 1px solid #323232;
     box-sizing: border-box;
@@ -671,9 +671,9 @@ h6 {
 }
 
 .btn-container button.clicked {
-    background-color: #4BB543;
+    background-color: #4bb543;
     border: 2px solid var(--borderColor);
-    color: #4BB543;
+    color: #4bb543;
     padding-right: 6px;
     -webkit-animation: bounce-in 0.3s;
     -moz-animation: bounce-in 0.3s;
@@ -761,22 +761,21 @@ h6 {
         width: calc(100% / 4) !important;
         top: 60px !important;
         transform: translateX(0px) !important;
-
     }
 
-    .container .tabs .tab.tab-1.active~.highlighter {
+    .container .tabs .tab.tab-1.active ~ .highlighter {
         transform: translateX(0px) !important;
     }
 
-    .container .tabs .tab.tab-2.active~.highlighter {
+    .container .tabs .tab.tab-2.active ~ .highlighter {
         transform: translateX(100%) !important;
     }
 
-    .container .tabs .tab.tab-3.active~.highlighter {
+    .container .tabs .tab.tab-3.active ~ .highlighter {
         transform: translateX(200%) !important;
     }
 
-    .container .tabs .tab.tab-4.active~.highlighter {
+    .container .tabs .tab.tab-4.active ~ .highlighter {
         transform: translateX(300%) !important;
     }
 
@@ -789,7 +788,6 @@ h6 {
     .flow {
         min-height: 600px !important;
     }
-
 }
 
 @media screen and (max-width: 400px) {
@@ -1130,9 +1128,6 @@ h6 {
     }
 }
 
-
-
-
 .selected {
     background-color: var(--previewShadow);
 }
@@ -1179,19 +1174,19 @@ h6 {
     color: #fff;
 }
 
-.container .tabs .tab.tab-1.active~.highlighter {
+.container .tabs .tab.tab-1.active ~ .highlighter {
     transform: translateY(0px);
 }
 
-.container .tabs .tab.tab-2.active~.highlighter {
+.container .tabs .tab.tab-2.active ~ .highlighter {
     transform: translateY(60px);
 }
 
-.container .tabs .tab.tab-3.active~.highlighter {
+.container .tabs .tab.tab-3.active ~ .highlighter {
     transform: translateY(120px);
 }
 
-.container .tabs .tab.tab-4.active~.highlighter {
+.container .tabs .tab.tab-4.active ~ .highlighter {
     transform: translateY(180px);
 }
 
@@ -1248,7 +1243,7 @@ h6 {
 }
 
 .container .content__section ul {
-    list-style-type: '🔹 ';
+    list-style-type: "🔹 ";
 }
 
 .container .content__section ul li:not(:last-child) {
@@ -1275,7 +1270,6 @@ h6 {
 #date-range {
     font-size: 10px;
     margin-top: 4px;
-
 }
 
 /* Underline Slidein Animation */
