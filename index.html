@@ -129,6 +129,19 @@
                 }
             });
         </script>
+
+        <!-- Simple Analytics - Privacy friendly analytics -->
+        <script
+            async
+            defer
+            src="https://scripts.simpleanalyticscdn.com/latest.js"
+        ></script>
+        <noscript
+            ><img
+                src="https://queue.simpleanalyticscdn.com/noscript.gif"
+                alt=""
+                referrerpolicy="no-referrer-when-downgrade"
+        /></noscript>
     </head>
     <body>
         <!-- Add skip link for keyboard navigation -->
@@ -917,5 +930,20 @@
         ></script>
         <script type="text/javascript" src="script.js" defer></script>
         <script type="text/javascript" src="btn.js" defer></script>
+        <script type="text/javascript" src="perf-monitor.js" defer></script>
+
+        <!-- Performance monitoring -->
+        <script
+            async
+            src="https://unpkg.com/web-vitals@2.1.0/dist/web-vitals.umd.js"
+        ></script>
+        <script>
+            window.addEventListener("load", () => {
+                webVitals.getTTFB(console.log);
+                webVitals.getFID(console.log);
+                webVitals.getLCP(console.log);
+                webVitals.getCLS(console.log);
+            });
+        </script>
     </body>
 </html>
