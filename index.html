@@ -56,8 +56,59 @@
             content="width=device-width, initial-scale=1, maximum-scale=5"
         />
 
+        <!-- Preload critical assets -->
+        <link rel="preload" href="default.css" as="style" />
+        <link
+            rel="preload"
+            href="images/abhi_profile.jpg"
+            as="image"
+            type="image/jpeg"
+        />
+
+        <!-- Critical CSS -->
+        <style>
+            /* Inline critical CSS */
+            #preloader {
+                background: white url(images/loader-circle.gif) no-repeat center
+                    center;
+                height: 100vh;
+                width: 100%;
+                position: fixed;
+                z-index: 100;
+            }
+            .main-container {
+                width: 1200px;
+                margin: 0 auto;
+            }
+            @media screen and (max-width: 1200px) {
+                .main-container {
+                    width: 95%;
+                }
+            }
+        </style>
+
+        <!-- Defer non-critical CSS -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+            media="print"
+            onload="this.media='all'"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="default.css"
+            media="print"
+            onload="this.media='all'"
+        />
+        <link id="theme-style" rel="stylesheet" type="text/css" href="" />
+
+        <!-- Preconnect to external domains -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://ajax.googleapis.com" />
+        <link rel="preconnect" href="https://kit.fontawesome.com" />
+
         <link
             href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap"
             rel="stylesheet"
@@ -66,18 +117,7 @@
             href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Russo+One&display=swap"
             rel="stylesheet"
         />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-        />
-        <link rel="stylesheet" type="text/css" href="default.css" />
-        <link id="theme-style" rel="stylesheet" type="text/css" href="" />
         <link rel="icon" type="image/x-icon" href="/images/favicon.png" />
-        <script
-            src="https://kit.fontawesome.com/72cc96dbd5.js"
-            crossorigin="anonymous"
-        ></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     </head>
     <body>
         <!-- Add structured data for person -->
@@ -743,11 +783,21 @@
             </div>
         </section>
         <script>
-            $(window).on("load", function () {
-                $("#preloader").delay(2000).fadeOut("slow");
+            // Inline critical JS
+            window.addEventListener("load", function () {
+                document.getElementById("preloader").style.display = "none";
             });
         </script>
-        <script type="text/javascript" src="script.js"></script>
-        <script type="text/javascript" src="btn.js"></script>
+        <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+            defer
+        ></script>
+        <script
+            src="https://kit.fontawesome.com/72cc96dbd5.js"
+            crossorigin
+            defer
+        ></script>
+        <script type="text/javascript" src="script.js" defer></script>
+        <script type="text/javascript" src="btn.js" defer></script>
     </body>
 </html>
