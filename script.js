@@ -1,55 +1,177 @@
-const form = document.getElementById("contact-form");
-const submitBtn = document.getElementById("submit-btn");
-let theme = localStorage.getItem("theme");
+"use strict";
 
-if (theme == null) {
-    setTheme("default");
-} else {
-    setTheme(theme);
+const THEME_STORAGE_KEY = "theme";
+const FORM_ENDPOINT =
+    "https://getform.io/f/75f08d80-b90d-429b-bbed-d5b267545e96";
+
+// Cache DOM elements
+const elements = {
+    form: document.getElementById("contact-form"),
+    themeStyle: document.getElementById("theme-style"),
+    themeDots: document.getElementsByClassName("theme-dot"),
+};
+
+// Theme configuration
+const themeConfig = {
+    light: "default.css",
+    blue: "blue.css",
+    purple: "purple.css",
+    green: "green.css",
+};
+
+// Initialize theme
+function initializeTheme() {
+    try {
+        const savedTheme = localStorage.getItem(THEME_STORAGE_KEY) || "light";
+        setTheme(savedTheme);
+    } catch (error) {
+        console.error("Error initializing theme:", error);
+        setTheme("light"); // Fallback to light theme
+    }
 }
 
-let themeDots = document.getElementsByClassName("theme-dot");
-
-for (var i = 0; themeDots.length > i; i++) {
-    themeDots[i].addEventListener("click", function () {
-        let mode = this.dataset.mode;
-        console.log("Options clicked:", mode);
-        setTheme(mode);
-    });
-}
-
+// Theme handling
 function setTheme(mode) {
-    if (mode == "light") {
-        document.getElementById("theme-style").href = "default.css";
+    try {
+        if (!themeConfig[mode]) {
+            throw new Error(`Invalid theme mode: ${mode}`);
+        }
+        elements.themeStyle.href = themeConfig[mode];
+        localStorage.setItem(THEME_STORAGE_KEY, mode);
+    } catch (error) {
+        console.error("Error setting theme:", error);
     }
-    if (mode == "blue") {
-        document.getElementById("theme-style").href = "blue.css";
-    }
-    if (mode == "purple") {
-        document.getElementById("theme-style").href = "purple.css";
-    }
-    if (mode == "green") {
-        document.getElementById("theme-style").href = "green.css";
-    }
-
-    localStorage.setItem("theme", mode);
 }
 
-function formSubmit(e) {
+// Debounce utility
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+// Form submission handler
+async function handleFormSubmit(e) {
     e.preventDefault();
+    const button = e.target.querySelector("button");
     const formData = new FormData(e.target);
 
-    fetch("https://getform.io/f/75f08d80-b90d-429b-bbed-d5b267545e96", {
+    // Validate form data
+    const isValid = validateForm(formData);
+    if (!isValid) {
+        return;
+    }
+
+    try {
+        button.disabled = true;
+        const response = await submitForm(formData);
+
+        if (!response.ok) {
+            throw new Error(`Form submission failed: ${response.statusText}`);
+        }
+
+        handleFormSuccess(e.target, button);
+    } catch (error) {
+        handleFormError(error);
+    } finally {
+        button.disabled = false;
+    }
+}
+
+// Form validation
+function validateForm(formData) {
+    const email = formData.get("email");
+    const message = formData.get("message");
+
+    if (!email || !message) {
+        alert("Please fill in all required fields");
+        return false;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address");
+        return false;
+    }
+
+    return true;
+}
+
+// Form submission
+async function submitForm(formData) {
+    return await fetch(FORM_ENDPOINT, {
         method: "POST",
         body: formData,
         headers: {
             Accept: "application/json",
         },
-    })
-        .then((response) => {
-            form.reset();
-        })
-        .catch((error) => console.log(error));
+    });
 }
 
-form.addEventListener("submit", formSubmit);
+// Success handler
+function handleFormSuccess(form, button) {
+    form.reset();
+    button.classList.add("clicked");
+    setTimeout(() => button.classList.remove("clicked"), 2000);
+    showNotification("Message sent successfully!", "success");
+}
+
+// Error handler
+function handleFormError(error) {
+    console.error("Form submission error:", error);
+    showNotification("Failed to send message. Please try again.", "error");
+}
+
+// Notification system
+function showNotification(message, type) {
+    const notification = document.createElement("div");
+    notification.className = `notification ${type}`;
+    notification.textContent = message;
+    document.body.appendChild(notification);
+
+    setTimeout(() => {
+        notification.remove();
+    }, 3000);
+}
+
+// Event listeners
+document.addEventListener("DOMContentLoaded", () => {
+    // Initialize theme
+    initializeTheme();
+
+    // Add theme switcher listeners
+    Array.from(elements.themeDots).forEach((dot) => {
+        dot.addEventListener("click", () => setTheme(dot.dataset.mode));
+    });
+
+    // Add form submission listener
+    elements.form?.addEventListener("submit", debounce(handleFormSubmit, 500));
+});
+
+// Add CSS for notifications
+const style = document.createElement("style");
+style.textContent = `
+    .notification {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        border-radius: 4px;
+        color: white;
+        z-index: 1000;
+        animation: slideIn 0.3s ease-out;
+    }
+    .notification.success { background-color: #4CAF50; }
+    .notification.error { background-color: #f44336; }
+    @keyframes slideIn {
+        from { transform: translateX(100%); }
+        to { transform: translateX(0); }
+    }
+`;
+document.head.appendChild(style);
