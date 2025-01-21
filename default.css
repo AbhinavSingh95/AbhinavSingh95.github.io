@@ -749,6 +749,12 @@ h6 {
     }
 }
 
+@media screen and (max-width: 450px) {
+    .greeting-wrapper h1 {
+        word-spacing: 9999px;
+    }
+}
+
 @media screen and (max-width: 400px) {
     #preview-shadow {
         max-width: 280px;
