@@ -110,6 +110,15 @@
             rel="stylesheet"
         />
         <link rel="icon" type="image/x-icon" href="/images/favicon.png" />
+
+        <!-- Add intersection observer polyfill for older browsers -->
+        <script>
+            if (!("IntersectionObserver" in window)) {
+                document.write(
+                    '<script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"><\/script>'
+                );
+            }
+        </script>
     </head>
     <body>
         <!-- Add structured data for person -->
@@ -184,6 +193,11 @@
                             <img
                                 id="profile_pic"
                                 src="images/abhi_profile.jpg"
+                                alt="Abhinav Singh - Machine Learning Engineer"
+                                loading="lazy"
+                                width="200"
+                                height="200"
+                                decoding="async"
                             />
                         </div>
                         <h5 style="text-align: center; line-height: 0">
@@ -302,7 +316,14 @@
                                 <span class="tooltip">CSS</span>
                                 <div class="box-face">
                                     <div class="box-text">
-                                        <img src="images/css.png" alt="" />
+                                        <img
+                                            src="images/css.png"
+                                            alt="CSS"
+                                            loading="lazy"
+                                            width="40"
+                                            height="40"
+                                            decoding="async"
+                                        />
                                     </div>
                                 </div>
                                 <div class="box-back">
@@ -319,7 +340,14 @@
                                 <span class="tooltip">Docker</span>
                                 <div class="box-face">
                                     <div class="box-text">
-                                        <img src="images/docker.png" alt="" />
+                                        <img
+                                            src="images/docker.png"
+                                            alt="Docker"
+                                            loading="lazy"
+                                            width="40"
+                                            height="40"
+                                            decoding="async"
+                                        />
                                     </div>
                                 </div>
                                 <div class="box-back">
@@ -338,7 +366,11 @@
                                     <div class="box-text">
                                         <img
                                             src="images/kubernetes.png"
-                                            alt=""
+                                            alt="Kubernetes"
+                                            loading="lazy"
+                                            width="40"
+                                            height="40"
+                                            decoding="async"
                                         />
                                     </div>
                                 </div>
@@ -358,7 +390,11 @@
                                     <div class="box-text">
                                         <img
                                             src="images/terraform.png"
-                                            alt=""
+                                            alt="Terraform"
+                                            loading="lazy"
+                                            width="40"
+                                            height="40"
+                                            decoding="async"
                                         />
                                     </div>
                                 </div>
@@ -378,7 +414,14 @@
                                 <span class="tooltip">GCP</span>
                                 <div class="box-face">
                                     <div class="box-text">
-                                        <img src="images/gcp.png" alt="" />
+                                        <img
+                                            src="images/gcp.png"
+                                            alt="GCP"
+                                            loading="lazy"
+                                            width="40"
+                                            height="40"
+                                            decoding="async"
+                                        />
                                     </div>
                                 </div>
                                 <div class="box-back">
@@ -395,7 +438,14 @@
                                 <span class="tooltip">Azure</span>
                                 <div class="box-face">
                                     <div class="box-text">
-                                        <img src="images/azure.png" alt="" />
+                                        <img
+                                            src="images/azure.png"
+                                            alt="Azure"
+                                            loading="lazy"
+                                            width="40"
+                                            height="40"
+                                            decoding="async"
+                                        />
                                     </div>
                                 </div>
                                 <div class="box-back">
@@ -412,7 +462,14 @@
                                 <span class="tooltip">MongoDB</span>
                                 <div class="box-face">
                                     <div class="box-text">
-                                        <img src="images/mongodb.png" alt="" />
+                                        <img
+                                            src="images/mongodb.png"
+                                            alt="MongoDB"
+                                            loading="lazy"
+                                            width="40"
+                                            height="40"
+                                            decoding="async"
+                                        />
                                     </div>
                                 </div>
                                 <div class="box-back">
@@ -431,7 +488,14 @@
                                 <span class="tooltip">Java</span>
                                 <div class="box-face">
                                     <div class="box-text">
-                                        <img src="images/java.png" alt="" />
+                                        <img
+                                            src="images/java.png"
+                                            alt="Java"
+                                            loading="lazy"
+                                            width="40"
+                                            height="40"
+                                            decoding="async"
+                                        />
                                     </div>
                                 </div>
                                 <div class="box-back">
@@ -448,7 +512,14 @@
                                 <span class="tooltip">Python</span>
                                 <div class="box-face">
                                     <div class="box-text">
-                                        <img src="images/python.png" alt="" />
+                                        <img
+                                            src="images/python.png"
+                                            alt="Python"
+                                            loading="lazy"
+                                            width="40"
+                                            height="40"
+                                            decoding="async"
+                                        />
                                     </div>
                                 </div>
                                 <div class="box-back">
@@ -650,7 +721,15 @@
                 <div class="post-wrapper">
                     <div>
                         <div class="post">
-                            <img class="thumbnail" src="images\go-wall.png" />
+                            <img
+                                class="thumbnail"
+                                src="images\go-wall.png"
+                                alt="An ode to Stacks and Pointers in Go!"
+                                loading="lazy"
+                                width="200"
+                                height="200"
+                                decoding="async"
+                            />
                             <div class="post-preview">
                                 <h6 class="post-title">
                                     An ode to Stacks and Pointers in Go!
@@ -682,6 +761,11 @@
                             <img
                                 class="thumbnail"
                                 src="images\aircamp\AirCamp1.png"
+                                alt="AirCamp"
+                                loading="lazy"
+                                width="200"
+                                height="200"
+                                decoding="async"
                             />
                             <div class="post-preview">
                                 <h6 class="post-title">AirCamp</h6>
@@ -696,7 +780,15 @@
 
                     <div>
                         <div class="post">
-                            <img class="thumbnail" src="images/ecom.jpg" />
+                            <img
+                                class="thumbnail"
+                                src="images/ecom.jpg"
+                                alt="Online Store - CoursePost Title"
+                                loading="lazy"
+                                width="200"
+                                height="200"
+                                decoding="async"
+                            />
                             <div class="post-preview">
                                 <h6 class="post-title">
                                     Online Store - CoursePost Title
@@ -778,6 +870,28 @@
             // Inline critical JS
             window.addEventListener("load", function () {
                 document.getElementById("preloader").style.display = "none";
+            });
+        </script>
+        <script>
+            // Lazy loading handler
+            document.addEventListener("DOMContentLoaded", function () {
+                const imageObserver = new IntersectionObserver(
+                    (entries, observer) => {
+                        entries.forEach((entry) => {
+                            if (entry.isIntersecting) {
+                                const img = entry.target;
+                                img.classList.add("loaded");
+                                observer.unobserve(img);
+                            }
+                        });
+                    }
+                );
+
+                // Observe all images
+                document.querySelectorAll("img").forEach((img) => {
+                    img.classList.add("lazy-image");
+                    imageObserver.observe(img);
+                });
             });
         </script>
         <script
