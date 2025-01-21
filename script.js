@@ -3,7 +3,7 @@ const submitBtn = document.getElementById("submit-btn");
 let theme = localStorage.getItem("theme");
 
 if (theme == null) {
-    setTheme("light");
+    setTheme("default");
 } else {
     setTheme(theme);
 }
