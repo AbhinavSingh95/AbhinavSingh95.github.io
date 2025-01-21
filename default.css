@@ -14,6 +14,8 @@
 
     --buttonColor: #fafbfc;
     --linkColor: #17a2b8;
+
+    --pupilColor: black;
 }
 
 html,
@@ -1320,4 +1322,87 @@ img {
     .btn-container button {
         border: 2px solid currentColor;
     }
+}
+
+/* Fade-in animation */
+.fade-in {
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Slide-in animations */
+.slide-in-left {
+    animation: slideInLeft 1s ease-in-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in-right {
+    animation: slideInRight 1s ease-in-out;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Floating eye styles */
+.i-container {
+    position: relative;
+    display: inline-block;
+    color: var(--mainText);
+    font-family: "Russo One", sans-serif;
+    font-weight: 500;
+}
+
+.floating-eye {
+    position: absolute;
+    top: 0.1px;
+    left: 55%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+}
+
+.eye {
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.pupil {
+    width: 10px;
+    height: 10px;
+    background: var(--pupilColor);
+    border-radius: 50%;
+    position: relative;
+    transition: transform 0.1s;
 }

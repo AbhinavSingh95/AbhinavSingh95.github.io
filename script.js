@@ -9,6 +9,7 @@ const elements = {
     form: document.getElementById("contact-form"),
     themeStyle: document.getElementById("theme-style"),
     themeDots: document.getElementsByClassName("theme-dot"),
+    floatingEye: document.querySelector(".floating-eye .pupil"),
 };
 
 // Theme configuration
@@ -172,6 +173,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Add form submission listener with simpler approach
     elements.form?.addEventListener("submit", handleFormSubmit);
+
+    // Add mouse move listener for floating eye
+    document.addEventListener("mousemove", (e) => {
+        const eye = elements.floatingEye;
+        const eyeRect = eye.getBoundingClientRect();
+        const eyeX = eyeRect.left + eyeRect.width / 2;
+        const eyeY = eyeRect.top + eyeRect.height / 2;
+        const angle = Math.atan2(e.clientY - eyeY, e.clientX - eyeX);
+        const distance = Math.min(
+            eyeRect.width / 4,
+            Math.hypot(e.clientX - eyeX, e.clientY - eyeY) / 10
+        );
+        eye.style.transform = `translate(${distance * Math.cos(angle)}px, ${
+            distance * Math.sin(angle)
+        }px)`;
+    });
 });
 
 // Add CSS for notifications
