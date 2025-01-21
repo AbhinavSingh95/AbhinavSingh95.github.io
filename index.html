@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -119,737 +119,765 @@
                 );
             }
         </script>
+        <script>
+            // Add skip to main content for keyboard users
+            window.addEventListener("DOMContentLoaded", () => {
+                const main = document.querySelector("main");
+                if (main) {
+                    main.setAttribute("role", "main");
+                    main.setAttribute("id", "main-content");
+                }
+            });
+        </script>
     </head>
     <body>
-        <!-- Add structured data for person -->
-        <script type="application/ld+json">
-            {
-                "@context": "https://schema.org",
-                "@type": "Person",
-                "name": "Abhinav Singh",
-                "jobTitle": "Machine Learning Engineer",
-                "url": "https://abhinavsingh95.github.io/",
-                "sameAs": [
-                    "https://github.com/AbhinavSingh95",
-                    "https://www.linkedin.com/in/init-abs/",
-                    "https://www.instagram.com/__init__abs/"
-                ],
-                "worksFor": {
-                    "@type": "Organization",
-                    "name": "WooliesX"
-                },
-                "alumni": {
-                    "@type": "CollegeOrUniversity",
-                    "name": "University of Melbourne"
-                }
-            }
-        </script>
+        <!-- Add skip link for keyboard navigation -->
+        <a href="#main-content" class="skip-to-main">Skip to main content</a>
 
-        <div id="preloader"></div>
-        <section class="s1">
-            <div class="main-container">
-                <div class="greeting-wrapper">
-                    <h1>Hi, I'm Abhinav Singh</h1>
-                </div>
-
-                <div class="intro-wrapper">
-                    <div class="nav-wrapper">
-                        <!-- Link around dots-wrapper added after tutorial video -->
-                        <a href="index.html">
-                            <div class="dots-wrapper">
-                                <div id="dot-1" class="browser-dot"></div>
-                                <div id="dot-2" class="browser-dot"></div>
-                                <div id="dot-3" class="browser-dot"></div>
-                            </div>
-                        </a>
-
-                        <ul id="navigation">
-                            <li>
-                                <a
-                                    href="https://github.com/AbhinavSingh95"
-                                    target="blank"
-                                    ><i class="fab fa-github"></i
-                                ></a>
-                            </li>
-                            <li>
-                                <a
-                                    href="https://www.instagram.com/__init__abs/"
-                                    target="blank"
-                                    ><i class="fab fa-instagram"></i
-                                ></a>
-                            </li>
-                            <li>
-                                <a
-                                    href="https://www.linkedin.com/in/init-abs/"
-                                    target="blank"
-                                    ><i class="fab fa-linkedin-in"></i
-                                ></a>
-                            </li>
-                        </ul>
+        <!-- Wrap main content in main tag -->
+        <main id="main-content">
+            <div id="preloader"></div>
+            <section class="s1">
+                <div class="main-container">
+                    <div class="greeting-wrapper">
+                        <h1>Hi, I'm Abhinav Singh</h1>
                     </div>
 
-                    <div class="left-column">
-                        <div class="profile-pic-container">
-                            <img
-                                id="profile_pic"
-                                src="images/abhi_profile.jpg"
-                                alt="Abhinav Singh - Machine Learning Engineer"
-                                loading="lazy"
-                                width="200"
-                                height="200"
-                                decoding="async"
-                            />
-                        </div>
-                        <h5 style="text-align: center; line-height: 0">
-                            Personalize Theme
-                        </h5>
+                    <div class="intro-wrapper">
+                        <div class="nav-wrapper">
+                            <!-- Link around dots-wrapper added after tutorial video -->
+                            <a href="index.html">
+                                <div class="dots-wrapper">
+                                    <div id="dot-1" class="browser-dot"></div>
+                                    <div id="dot-2" class="browser-dot"></div>
+                                    <div id="dot-3" class="browser-dot"></div>
+                                </div>
+                            </a>
 
-                        <div id="theme-options-wrapper">
-                            <div
-                                data-mode="light"
-                                id="light-mode"
-                                class="theme-dot"
-                            ></div>
-                            <div
-                                data-mode="blue"
-                                id="blue-mode"
-                                class="theme-dot"
-                            ></div>
-                            <div
-                                data-mode="green"
-                                id="green-mode"
-                                class="theme-dot"
-                            ></div>
-                            <div
-                                data-mode="purple"
-                                id="purple-mode"
-                                class="theme-dot"
-                            ></div>
-                        </div>
-
-                        <p id="settings-note">
-                            **Theme settings will be saved for<br />your
-                            upcoming vists
-                        </p>
-                    </div>
-
-                    <div class="right-column">
-                        <div id="preview-shadow">
-                            <div id="preview">
-                                <div id="corner-tl" class="corner"></div>
-                                <div id="corner-tr" class="corner"></div>
-                                <h3>Who am I?</h3>
-                                <p>
-                                    I’m a self-motivated, creative technology
-                                    enthusiast specialized in building data
-                                    intensive applications.
-                                </p>
-                                <div id="corner-br" class="corner"></div>
-                                <div id="corner-bl" class="corner"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="s2">
-            <div class="main-container">
-                <div class="about-wrapper">
-                    <div class="about-me">
-                        <h4>More about me</h4>
-
-                        <p>
-                            I'm currently an Engineer at WooliesX, building
-                            applications enabling data-driven decision-making
-                            with an extraordinary team. I graduated from the
-                            University of Melbourne after completing my master's
-                            in Information Technology.
-                        </p>
-
-                        <p>
-                            As a Machine Learning Engineer, I strive to bridge
-                            the gap between engineering and data science,
-                            leveraging my technical expertise and design acumen
-                            to craft applications that are both secure and
-                            compliant, yet flexible and efficient. My primary
-                            goal is to create scalable and reliable products
-                            that provide an enjoyable, user-friendly experience.
-                        </p>
-
-                        <hr />
-
-                        <h4>TOP EXPERTISE</h4>
-
-                        <p>
-                            Fullstack AI developer with primary focus on
-                            building data intensive applications:
-                            <a target="_blank" href="abhinavSinghResume.pdf"
-                                >Download Resume</a
-                            >
-                        </p>
-
-                        <div id="skills">
-                            <ul>
-                                <li>Python</li>
-                                <li>C++</li>
-                                <li>Go</li>
-                                <li>Machine Learning</li>
-                                <li>SQL</li>
-                                <li>TensorFlow</li>
-                            </ul>
-
-                            <ul>
-                                <li>Docker</li>
-                                <li>Kubernetes</li>
-                                <li>PyTorch</li>
-                                <li>Scikit-Learn</li>
-                                <li>Elastic</li>
-                                <li>MongoDB</li>
+                            <ul id="navigation">
+                                <li>
+                                    <a
+                                        href="https://github.com/AbhinavSingh95"
+                                        target="blank"
+                                        ><i class="fab fa-github"></i
+                                    ></a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://www.instagram.com/__init__abs/"
+                                        target="blank"
+                                        ><i class="fab fa-instagram"></i
+                                    ></a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://www.linkedin.com/in/init-abs/"
+                                        target="blank"
+                                        ><i class="fab fa-linkedin-in"></i
+                                    ></a>
+                                </li>
                             </ul>
                         </div>
-                    </div>
 
-                    <div class="wall">
-                        <div class="v-boxes">
-                            <div class="box">
-                                <span class="tooltip">CSS</span>
-                                <div class="box-face">
-                                    <div class="box-text">
-                                        <img
-                                            src="images/css.png"
-                                            alt="CSS"
-                                            loading="lazy"
-                                            width="40"
-                                            height="40"
-                                            decoding="async"
-                                        />
-                                    </div>
-                                </div>
-                                <div class="box-back">
-                                    <div class="box-text">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                    </div>
-                                </div>
+                        <div class="left-column">
+                            <div class="profile-pic-container">
+                                <img
+                                    id="profile_pic"
+                                    src="images/abhi_profile.jpg"
+                                    alt="Abhinav Singh - Machine Learning Engineer"
+                                    loading="lazy"
+                                    width="200"
+                                    height="200"
+                                    decoding="async"
+                                />
                             </div>
-                            <div class="box">
-                                <span class="tooltip">Docker</span>
-                                <div class="box-face">
-                                    <div class="box-text">
-                                        <img
-                                            src="images/docker.png"
-                                            alt="Docker"
-                                            loading="lazy"
-                                            width="40"
-                                            height="40"
-                                            decoding="async"
-                                        />
-                                    </div>
-                                </div>
-                                <div class="box-back">
-                                    <div class="box-text">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
-                                </div>
+                            <h5 style="text-align: center; line-height: 0">
+                                Personalize Theme
+                            </h5>
+
+                            <div id="theme-options-wrapper">
+                                <div
+                                    data-mode="light"
+                                    id="light-mode"
+                                    class="theme-dot"
+                                ></div>
+                                <div
+                                    data-mode="blue"
+                                    id="blue-mode"
+                                    class="theme-dot"
+                                ></div>
+                                <div
+                                    data-mode="green"
+                                    id="green-mode"
+                                    class="theme-dot"
+                                ></div>
+                                <div
+                                    data-mode="purple"
+                                    id="purple-mode"
+                                    class="theme-dot"
+                                ></div>
                             </div>
-                            <div class="box">
-                                <span class="tooltip">Kubernetes</span>
-                                <div class="box-face">
-                                    <div class="box-text">
-                                        <img
-                                            src="images/kubernetes.png"
-                                            alt="Kubernetes"
-                                            loading="lazy"
-                                            width="40"
-                                            height="40"
-                                            decoding="async"
-                                        />
-                                    </div>
-                                </div>
-                                <div class="box-back">
-                                    <div class="box-text">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="box">
-                                <span class="tooltip">Terraform</span>
-                                <div class="box-face">
-                                    <div class="box-text">
-                                        <img
-                                            src="images/terraform.png"
-                                            alt="Terraform"
-                                            loading="lazy"
-                                            width="40"
-                                            height="40"
-                                            decoding="async"
-                                        />
-                                    </div>
-                                </div>
-                                <div class="box-back">
-                                    <div class="box-text">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
+
+                            <p id="settings-note">
+                                **Theme settings will be saved for<br />your
+                                upcoming vists
+                            </p>
                         </div>
-                        <div class="v-boxes second">
-                            <div class="box">
-                                <span class="tooltip">GCP</span>
-                                <div class="box-face">
-                                    <div class="box-text">
-                                        <img
-                                            src="images/gcp.png"
-                                            alt="GCP"
-                                            loading="lazy"
-                                            width="40"
-                                            height="40"
-                                            decoding="async"
-                                        />
-                                    </div>
-                                </div>
-                                <div class="box-back">
-                                    <div class="box-text">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="box">
-                                <span class="tooltip">Azure</span>
-                                <div class="box-face">
-                                    <div class="box-text">
-                                        <img
-                                            src="images/azure.png"
-                                            alt="Azure"
-                                            loading="lazy"
-                                            width="40"
-                                            height="40"
-                                            decoding="async"
-                                        />
-                                    </div>
-                                </div>
-                                <div class="box-back">
-                                    <div class="box-text">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="box">
-                                <span class="tooltip">MongoDB</span>
-                                <div class="box-face">
-                                    <div class="box-text">
-                                        <img
-                                            src="images/mongodb.png"
-                                            alt="MongoDB"
-                                            loading="lazy"
-                                            width="40"
-                                            height="40"
-                                            decoding="async"
-                                        />
-                                    </div>
-                                </div>
-                                <div class="box-back">
-                                    <div class="box-text">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="v-boxes third">
-                            <div class="box">
-                                <span class="tooltip">Java</span>
-                                <div class="box-face">
-                                    <div class="box-text">
-                                        <img
-                                            src="images/java.png"
-                                            alt="Java"
-                                            loading="lazy"
-                                            width="40"
-                                            height="40"
-                                            decoding="async"
-                                        />
-                                    </div>
-                                </div>
-                                <div class="box-back">
-                                    <div class="box-text">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="box">
-                                <span class="tooltip">Python</span>
-                                <div class="box-face">
-                                    <div class="box-text">
-                                        <img
-                                            src="images/python.png"
-                                            alt="Python"
-                                            loading="lazy"
-                                            width="40"
-                                            height="40"
-                                            decoding="async"
-                                        />
-                                    </div>
-                                </div>
-                                <div class="box-back">
-                                    <div class="box-text">
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="v-boxes forth">
-                            <div class="box link">
-                                <div class="box-face">
-                                    <div class="box-text">
-                                        <i class="fab fa-github-alt"></i>
-                                    </div>
+
+                        <div class="right-column">
+                            <div id="preview-shadow">
+                                <div id="preview">
+                                    <div id="corner-tl" class="corner"></div>
+                                    <div id="corner-tr" class="corner"></div>
+                                    <h3>Who am I?</h3>
+                                    <p>
+                                        I’m a self-motivated, creative
+                                        technology enthusiast specialized in
+                                        building data intensive applications.
+                                    </p>
+                                    <div id="corner-br" class="corner"></div>
+                                    <div id="corner-bl" class="corner"></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="s1 flow">
-            <div class="main-container">
-                <h3 id="work__heading" style="text-align: center">
-                    Where I’ve Worked
-                </h3>
-                <div class="container">
-                    <div class="tabs">
-                        <div class="tab tab-1 selected active" data-tab="1">
-                            <span>WooliesX</span>
-                        </div>
-                        <div class="tab tab-2" data-tab="2">
-                            <span>Servian</span>
-                        </div>
-                        <div class="tab tab-3" data-tab="3">
-                            <span>6Clicks</span>
-                        </div>
-                        <div class="tab tab-4" data-tab="4">
-                            <span>EY</span>
-                        </div>
-                        <span class="highlighter"></span>
-                    </div>
+            <section class="s2">
+                <div class="main-container">
+                    <div class="about-wrapper">
+                        <div class="about-me">
+                            <h4>More about me</h4>
 
-                    <div class="content">
-                        <div class="content__section visible" data-tab="1">
-                            <h6>
-                                <span>Senior ML Engineer</span>
-                                <span>
-                                    <a
-                                        href="https://www.wooliesx.com.au"
-                                        class="inline-link"
-                                        rel="noopener noreferrer"
-                                        target="_blank"
-                                        >@WooliesX</a
-                                    >
-                                </span>
-                            </h6>
-                            <p id="date-range">March 2022 - Present</p>
-                            <div>
-                                <p id="experience-description">
-                                    Engineered machine learning models to
-                                    optimize offer allocation, resulting in a
-                                    16% increase in customer engagement and
-                                    incremental sales. Developed deep learning
-                                    models for real-time behavioral targeting,
-                                    boosting engagement and conversion rates by
-                                    10%. Led the creation of 'Modelverse,' an
-                                    in-house MLOps platform integrating MLflow,
-                                    which reduced deployment times and improved
-                                    model governance. Automated scalable
-                                    pipelines, reducing time-to-market by 40%,
-                                    and empowered data-driven marketing
-                                    strategies that enhanced customer
-                                    satisfaction. Collaborated with
-                                    cross-functional teams to ensure seamless
-                                    deployment of high-performance machine
-                                    learning models in production.
-                                </p>
-                            </div>
-                        </div>
+                            <p>
+                                I'm currently an Engineer at WooliesX, building
+                                applications enabling data-driven
+                                decision-making with an extraordinary team. I
+                                graduated from the University of Melbourne after
+                                completing my master's in Information
+                                Technology.
+                            </p>
 
-                        <div class="content__section" data-tab="2">
-                            <h6>
-                                <span>ML Engineer</span>
-                                <span>
-                                    <a
-                                        href="https://www.servian.com/"
-                                        class="inline-link"
-                                        rel="noopener noreferrer"
-                                        target="_blank"
-                                        >@Servian</a
-                                    >
-                                </span>
-                            </h6>
-                            <p id="date-range">Oct 2021 - Mar 2022</p>
-                            <div>
-                                <p id="experience-description">
-                                    Developed scalable recommendation algorithms
-                                    using collaborative filtering, content-based
-                                    models, and deep learning, improving
-                                    customer satisfaction and engagement by 8%,
-                                    while driving incremental revenue in retail
-                                    and media. Designed and deployed advanced
-                                    machine learning pipelines, integrating
-                                    real-time recommendation models into
-                                    production. Built a modular, reusable
-                                    framework with Python and PyTorch, enabling
-                                    rapid iteration and scalable deployment of
-                                    ML models.
-                                </p>
-                            </div>
-                        </div>
+                            <p>
+                                As a Machine Learning Engineer, I strive to
+                                bridge the gap between engineering and data
+                                science, leveraging my technical expertise and
+                                design acumen to craft applications that are
+                                both secure and compliant, yet flexible and
+                                efficient. My primary goal is to create scalable
+                                and reliable products that provide an enjoyable,
+                                user-friendly experience.
+                            </p>
 
-                        <div class="content__section" data-tab="3">
-                            <h6>
-                                <span>AI Engineer</span>
-                                <span>
-                                    <a
-                                        href="https://www.6clicks.com/"
-                                        class="inline-link"
-                                        rel="noopener noreferrer"
-                                        target="_blank"
-                                        >@6Clicks</a
-                                    >
-                                </span>
-                            </h6>
-                            <p id="date-range">Feb 2021 - Oct 2021</p>
-                            <div>
-                                <p id="experience-description">
-                                    Played a key role in designing and enhancing
-                                    the Hailey AI Engine, the core of 6Clicks’
-                                    GRC platform, revolutionizing the automation
-                                    of compliance processes and reducing task
-                                    times from days to seconds. Leveraged
-                                    advanced machine learning and natural
-                                    language processing (NLP) to implement
-                                    features like Compliance Mapping and Policy
-                                    Gap Analysis, delivering instant insights
-                                    into control overlaps and streamlining risk
-                                    management. Ensured seamless integration of
-                                    the AI engine into the multi-tenant
-                                    platform, providing real-time, AI-driven
-                                    insights that added significant value for
-                                    users.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="content__section" data-tab="4">
-                            <h6>
-                                <span>Associate Software Engineer</span>
-                                <span>
-                                    <a
-                                        href="https://www.ey.com"
-                                        class="inline-link"
-                                        rel="noopener noreferrer"
-                                        target="_blank"
-                                        >@EY</a
-                                    >
-                                </span>
-                            </h6>
-                            <p id="date-range">Aug 2016 - Sept 2018</p>
-                            <div>
-                                <p id="experience-description">
-                                    Engineered and deployed end-to-end
-                                    automation solutions across industries such
-                                    as supply chain, banking, and HR, utilizing
-                                    RPA tools (UiPath, Automation Anywhere) and
-                                    custom Python scripting to create scalable
-                                    workflows. Integrated with enterprise
-                                    systems through REST APIs, reducing manual
-                                    workloads by over 25%, while ensuring robust
-                                    error handling in production environments.
-                                    Additionally, designed and implemented
-                                    enterprise-grade automation frameworks for
-                                    Robotics Centers of Excellence (CoE),
-                                    incorporating modular workflows, CI/CD
-                                    pipelines, and version control, optimizing
-                                    processes for 40% higher throughput,
-                                    enabling scalable automation adoption, and
-                                    ensuring compliance with security standards.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                            <hr />
 
-        <section class="s2">
-            <div class="main-container">
-                <h3 style="text-align: center">Some of my recent blogs</h3>
+                            <h4>TOP EXPERTISE</h4>
 
-                <div class="post-wrapper">
-                    <div>
-                        <div class="post">
-                            <img
-                                class="thumbnail"
-                                src="images\go-wall.png"
-                                alt="An ode to Stacks and Pointers in Go!"
-                                loading="lazy"
-                                width="200"
-                                height="200"
-                                decoding="async"
-                            />
-                            <div class="post-preview">
-                                <h6 class="post-title">
-                                    An ode to Stacks and Pointers in Go!
-                                </h6>
-                                <p class="post-intro">
-                                    This Blog describes the importance of
-                                    pointers, stack and their mechanics in
-                                    Golang
-                                </p>
-                                <a
-                                    href="https://dev.to/__init__abs/an-ode-to-stacks-and-pointers-in-go-525n"
-                                    target="_blank"
-                                    >Read More</a
+                            <p>
+                                Fullstack AI developer with primary focus on
+                                building data intensive applications:
+                                <a target="_blank" href="abhinavSinghResume.pdf"
+                                    >Download Resume</a
                                 >
+                            </p>
+
+                            <div id="skills">
+                                <ul>
+                                    <li>Python</li>
+                                    <li>C++</li>
+                                    <li>Go</li>
+                                    <li>Machine Learning</li>
+                                    <li>SQL</li>
+                                    <li>TensorFlow</li>
+                                </ul>
+
+                                <ul>
+                                    <li>Docker</li>
+                                    <li>Kubernetes</li>
+                                    <li>PyTorch</li>
+                                    <li>Scikit-Learn</li>
+                                    <li>Elastic</li>
+                                    <li>MongoDB</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="wall">
+                            <div class="v-boxes">
+                                <div class="box">
+                                    <span class="tooltip">CSS</span>
+                                    <div class="box-face">
+                                        <div class="box-text">
+                                            <img
+                                                src="images/css.png"
+                                                alt="CSS"
+                                                loading="lazy"
+                                                width="40"
+                                                height="40"
+                                                decoding="async"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="box-back">
+                                        <div class="box-text">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box">
+                                    <span class="tooltip">Docker</span>
+                                    <div class="box-face">
+                                        <div class="box-text">
+                                            <img
+                                                src="images/docker.png"
+                                                alt="Docker"
+                                                loading="lazy"
+                                                width="40"
+                                                height="40"
+                                                decoding="async"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="box-back">
+                                        <div class="box-text">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box">
+                                    <span class="tooltip">Kubernetes</span>
+                                    <div class="box-face">
+                                        <div class="box-text">
+                                            <img
+                                                src="images/kubernetes.png"
+                                                alt="Kubernetes"
+                                                loading="lazy"
+                                                width="40"
+                                                height="40"
+                                                decoding="async"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="box-back">
+                                        <div class="box-text">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box">
+                                    <span class="tooltip">Terraform</span>
+                                    <div class="box-face">
+                                        <div class="box-text">
+                                            <img
+                                                src="images/terraform.png"
+                                                alt="Terraform"
+                                                loading="lazy"
+                                                width="40"
+                                                height="40"
+                                                decoding="async"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="box-back">
+                                        <div class="box-text">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="v-boxes second">
+                                <div class="box">
+                                    <span class="tooltip">GCP</span>
+                                    <div class="box-face">
+                                        <div class="box-text">
+                                            <img
+                                                src="images/gcp.png"
+                                                alt="GCP"
+                                                loading="lazy"
+                                                width="40"
+                                                height="40"
+                                                decoding="async"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="box-back">
+                                        <div class="box-text">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box">
+                                    <span class="tooltip">Azure</span>
+                                    <div class="box-face">
+                                        <div class="box-text">
+                                            <img
+                                                src="images/azure.png"
+                                                alt="Azure"
+                                                loading="lazy"
+                                                width="40"
+                                                height="40"
+                                                decoding="async"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="box-back">
+                                        <div class="box-text">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box">
+                                    <span class="tooltip">MongoDB</span>
+                                    <div class="box-face">
+                                        <div class="box-text">
+                                            <img
+                                                src="images/mongodb.png"
+                                                alt="MongoDB"
+                                                loading="lazy"
+                                                width="40"
+                                                height="40"
+                                                decoding="async"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="box-back">
+                                        <div class="box-text">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="v-boxes third">
+                                <div class="box">
+                                    <span class="tooltip">Java</span>
+                                    <div class="box-face">
+                                        <div class="box-text">
+                                            <img
+                                                src="images/java.png"
+                                                alt="Java"
+                                                loading="lazy"
+                                                width="40"
+                                                height="40"
+                                                decoding="async"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="box-back">
+                                        <div class="box-text">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box">
+                                    <span class="tooltip">Python</span>
+                                    <div class="box-face">
+                                        <div class="box-text">
+                                            <img
+                                                src="images/python.png"
+                                                alt="Python"
+                                                loading="lazy"
+                                                width="40"
+                                                height="40"
+                                                decoding="async"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div class="box-back">
+                                        <div class="box-text">
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                            <i class="fa fa-star"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="v-boxes forth">
+                                <div class="box link">
+                                    <div class="box-face">
+                                        <div class="box-text">
+                                            <i class="fab fa-github-alt"></i>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="s1">
-            <div class="main-container">
-                <h3 style="text-align: center">Some of my past projects</h3>
-
-                <div class="post-wrapper">
-                    <div>
-                        <div class="post">
-                            <img
-                                class="thumbnail"
-                                src="images\aircamp\AirCamp1.png"
-                                alt="AirCamp"
-                                loading="lazy"
-                                width="200"
-                                height="200"
-                                decoding="async"
-                            />
-                            <div class="post-preview">
-                                <h6 class="post-title">AirCamp</h6>
-                                <p class="post-intro">
-                                    YelpCamp is a website where users can
-                                    create, review and advertise campgrounds.
-                                </p>
-                                <a href="aircamp.html">Read More</a>
+            <section class="s1 flow">
+                <div class="main-container">
+                    <h3 id="work__heading" style="text-align: center">
+                        Where I’ve Worked
+                    </h3>
+                    <div class="container">
+                        <div class="tabs">
+                            <div class="tab tab-1 selected active" data-tab="1">
+                                <span>WooliesX</span>
                             </div>
+                            <div class="tab tab-2" data-tab="2">
+                                <span>Servian</span>
+                            </div>
+                            <div class="tab tab-3" data-tab="3">
+                                <span>6Clicks</span>
+                            </div>
+                            <div class="tab tab-4" data-tab="4">
+                                <span>EY</span>
+                            </div>
+                            <span class="highlighter"></span>
                         </div>
-                    </div>
 
-                    <div>
-                        <div class="post">
-                            <img
-                                class="thumbnail"
-                                src="images/ecom.jpg"
-                                alt="Online Store - CoursePost Title"
-                                loading="lazy"
-                                width="200"
-                                height="200"
-                                decoding="async"
-                            />
-                            <div class="post-preview">
-                                <h6 class="post-title">
-                                    Online Store - CoursePost Title
+                        <div class="content">
+                            <div class="content__section visible" data-tab="1">
+                                <h6>
+                                    <span>Senior ML Engineer</span>
+                                    <span>
+                                        <a
+                                            href="https://www.wooliesx.com.au"
+                                            class="inline-link"
+                                            rel="noopener noreferrer"
+                                            target="_blank"
+                                            >@WooliesX</a
+                                        >
+                                    </span>
                                 </h6>
-                                <p class="post-intro">
-                                    Online store with paypal payments
-                                    intergration and guest user shopping
-                                </p>
-                                <a href="post.html">Read More</a>
+                                <p id="date-range">March 2022 - Present</p>
+                                <div>
+                                    <p id="experience-description">
+                                        Engineered machine learning models to
+                                        optimize offer allocation, resulting in
+                                        a 16% increase in customer engagement
+                                        and incremental sales. Developed deep
+                                        learning models for real-time behavioral
+                                        targeting, boosting engagement and
+                                        conversion rates by 10%. Led the
+                                        creation of 'Modelverse,' an in-house
+                                        MLOps platform integrating MLflow, which
+                                        reduced deployment times and improved
+                                        model governance. Automated scalable
+                                        pipelines, reducing time-to-market by
+                                        40%, and empowered data-driven marketing
+                                        strategies that enhanced customer
+                                        satisfaction. Collaborated with
+                                        cross-functional teams to ensure
+                                        seamless deployment of high-performance
+                                        machine learning models in production.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="content__section" data-tab="2">
+                                <h6>
+                                    <span>ML Engineer</span>
+                                    <span>
+                                        <a
+                                            href="https://www.servian.com/"
+                                            class="inline-link"
+                                            rel="noopener noreferrer"
+                                            target="_blank"
+                                            >@Servian</a
+                                        >
+                                    </span>
+                                </h6>
+                                <p id="date-range">Oct 2021 - Mar 2022</p>
+                                <div>
+                                    <p id="experience-description">
+                                        Developed scalable recommendation
+                                        algorithms using collaborative
+                                        filtering, content-based models, and
+                                        deep learning, improving customer
+                                        satisfaction and engagement by 8%, while
+                                        driving incremental revenue in retail
+                                        and media. Designed and deployed
+                                        advanced machine learning pipelines,
+                                        integrating real-time recommendation
+                                        models into production. Built a modular,
+                                        reusable framework with Python and
+                                        PyTorch, enabling rapid iteration and
+                                        scalable deployment of ML models.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="content__section" data-tab="3">
+                                <h6>
+                                    <span>AI Engineer</span>
+                                    <span>
+                                        <a
+                                            href="https://www.6clicks.com/"
+                                            class="inline-link"
+                                            rel="noopener noreferrer"
+                                            target="_blank"
+                                            >@6Clicks</a
+                                        >
+                                    </span>
+                                </h6>
+                                <p id="date-range">Feb 2021 - Oct 2021</p>
+                                <div>
+                                    <p id="experience-description">
+                                        Played a key role in designing and
+                                        enhancing the Hailey AI Engine, the core
+                                        of 6Clicks’ GRC platform,
+                                        revolutionizing the automation of
+                                        compliance processes and reducing task
+                                        times from days to seconds. Leveraged
+                                        advanced machine learning and natural
+                                        language processing (NLP) to implement
+                                        features like Compliance Mapping and
+                                        Policy Gap Analysis, delivering instant
+                                        insights into control overlaps and
+                                        streamlining risk management. Ensured
+                                        seamless integration of the AI engine
+                                        into the multi-tenant platform,
+                                        providing real-time, AI-driven insights
+                                        that added significant value for users.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="content__section" data-tab="4">
+                                <h6>
+                                    <span>Associate Software Engineer</span>
+                                    <span>
+                                        <a
+                                            href="https://www.ey.com"
+                                            class="inline-link"
+                                            rel="noopener noreferrer"
+                                            target="_blank"
+                                            >@EY</a
+                                        >
+                                    </span>
+                                </h6>
+                                <p id="date-range">Aug 2016 - Sept 2018</p>
+                                <div>
+                                    <p id="experience-description">
+                                        Engineered and deployed end-to-end
+                                        automation solutions across industries
+                                        such as supply chain, banking, and HR,
+                                        utilizing RPA tools (UiPath, Automation
+                                        Anywhere) and custom Python scripting to
+                                        create scalable workflows. Integrated
+                                        with enterprise systems through REST
+                                        APIs, reducing manual workloads by over
+                                        25%, while ensuring robust error
+                                        handling in production environments.
+                                        Additionally, designed and implemented
+                                        enterprise-grade automation frameworks
+                                        for Robotics Centers of Excellence
+                                        (CoE), incorporating modular workflows,
+                                        CI/CD pipelines, and version control,
+                                        optimizing processes for 40% higher
+                                        throughput, enabling scalable automation
+                                        adoption, and ensuring compliance with
+                                        security standards.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <section class="s2">
-            <div class="main-container">
-                <h3 style="text-align: center">Get In Touch</h3>
-                <form id="contact-form" method="POST">
-                    <a name="contact"></a>
-                    <label>Name</label>
-                    <input
-                        class="input-field"
-                        type="text"
-                        name="name"
-                        required
-                    />
+            <section class="s2">
+                <div class="main-container">
+                    <h3 style="text-align: center">Some of my recent blogs</h3>
 
-                    <label>Subject</label>
-                    <input
-                        class="input-field"
-                        type="text"
-                        name="subject"
-                        required
-                    />
-
-                    <label>Email</label>
-                    <input
-                        class="input-field"
-                        type="email"
-                        name="email"
-                        required
-                    />
-
-                    <label>Message</label>
-                    <textarea
-                        class="input-field"
-                        name="message"
-                        required
-                    ></textarea>
-
-                    <div class="btn-container">
-                        <!-- <input id="submit-btn" type="submit" value="Send" /> -->
-                        <button>
-                            <p>Send</p>
-                        </button>
+                    <div class="post-wrapper">
+                        <div>
+                            <div class="post">
+                                <img
+                                    class="thumbnail"
+                                    src="images\go-wall.png"
+                                    alt="An ode to Stacks and Pointers in Go!"
+                                    loading="lazy"
+                                    width="200"
+                                    height="200"
+                                    decoding="async"
+                                />
+                                <div class="post-preview">
+                                    <h6 class="post-title">
+                                        An ode to Stacks and Pointers in Go!
+                                    </h6>
+                                    <p class="post-intro">
+                                        This Blog describes the importance of
+                                        pointers, stack and their mechanics in
+                                        Golang
+                                    </p>
+                                    <a
+                                        href="https://dev.to/__init__abs/an-ode-to-stacks-and-pointers-in-go-525n"
+                                        target="_blank"
+                                        >Read More</a
+                                    >
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </form>
-            </div>
-        </section>
+                </div>
+            </section>
+
+            <section class="s1">
+                <div class="main-container">
+                    <h3 style="text-align: center">Some of my past projects</h3>
+
+                    <div class="post-wrapper">
+                        <div>
+                            <div class="post">
+                                <img
+                                    class="thumbnail"
+                                    src="images\aircamp\AirCamp1.png"
+                                    alt="AirCamp"
+                                    loading="lazy"
+                                    width="200"
+                                    height="200"
+                                    decoding="async"
+                                />
+                                <div class="post-preview">
+                                    <h6 class="post-title">AirCamp</h6>
+                                    <p class="post-intro">
+                                        YelpCamp is a website where users can
+                                        create, review and advertise
+                                        campgrounds.
+                                    </p>
+                                    <a href="aircamp.html">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="post">
+                                <img
+                                    class="thumbnail"
+                                    src="images/ecom.jpg"
+                                    alt="Online Store - CoursePost Title"
+                                    loading="lazy"
+                                    width="200"
+                                    height="200"
+                                    decoding="async"
+                                />
+                                <div class="post-preview">
+                                    <h6 class="post-title">
+                                        Online Store - CoursePost Title
+                                    </h6>
+                                    <p class="post-intro">
+                                        Online store with paypal payments
+                                        intergration and guest user shopping
+                                    </p>
+                                    <a href="post.html">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="s2" role="region" aria-labelledby="contact-heading">
+                <div class="main-container">
+                    <h3 id="contact-heading" style="text-align: center">
+                        Get In Touch
+                    </h3>
+                    <form
+                        id="contact-form"
+                        method="POST"
+                        aria-labelledby="contact-heading"
+                    >
+                        <div class="form-group">
+                            <label for="name" class="required">Name</label>
+                            <input
+                                class="input-field"
+                                type="text"
+                                id="name"
+                                name="name"
+                                required
+                                aria-required="true"
+                                aria-invalid="false"
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject" class="required"
+                                >Subject</label
+                            >
+                            <input
+                                class="input-field"
+                                type="text"
+                                id="subject"
+                                name="subject"
+                                required
+                                aria-required="true"
+                                aria-invalid="false"
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="required">Email</label>
+                            <input
+                                class="input-field"
+                                type="email"
+                                id="email"
+                                name="email"
+                                required
+                                aria-required="true"
+                                aria-invalid="false"
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="required"
+                                >Message</label
+                            >
+                            <textarea
+                                class="input-field"
+                                id="message"
+                                name="message"
+                                required
+                                aria-required="true"
+                                aria-invalid="false"
+                            ></textarea>
+                        </div>
+
+                        <div class="btn-container">
+                            <button type="submit" aria-label="Send message">
+                                <p>Send</p>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
         <script>
             // Inline critical JS
             window.addEventListener("load", function () {

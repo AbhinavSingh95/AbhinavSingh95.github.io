@@ -1273,3 +1273,59 @@ img {
         contain-intrinsic-size: 400px;
     }
 }
+
+/* Accessibility improvements */
+.skip-to-main {
+    position: absolute;
+    left: -9999px;
+    z-index: 999;
+    padding: 1em;
+    background-color: var(--mainColor);
+    color: var(--mainText);
+    text-decoration: none;
+}
+
+.skip-to-main:focus {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Focus indicators */
+:focus {
+    outline: 2px solid var(--linkColor);
+    outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Form accessibility */
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.input-field:focus {
+    outline: 2px solid var(--linkColor);
+    outline-offset: 2px;
+}
+
+.required::after {
+    content: "*";
+    color: #e32;
+    margin-left: 4px;
+}
+
+[aria-invalid="true"] {
+    border-color: #e32;
+}
+
+/* High contrast support */
+@media (forced-colors: active) {
+    .theme-dot,
+    .browser-dot,
+    .btn-container button {
+        border: 2px solid currentColor;
+    }
+}
