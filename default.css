@@ -641,36 +641,6 @@ h6 {
     transform: translateY(-2px);
 }
 
-.btn-container button:hover svg {
-    -webkit-transform: rotate(10deg);
-    -moz-transform: rotate(10deg);
-    -o-transform: rotate(10deg);
-    -ms-transform: rotate(10deg);
-    transform: rotate(10deg);
-    -webkit-transition: -webkit-transform 0.15s;
-    -moz-transition: -moz-transform 0.15s;
-    -o-transition: -o-transform 0.15s;
-    -ms-transition: -ms-transform 0.15s;
-    transition: transform 0.15s;
-}
-
-.btn-container button svg {
-    position: absolute;
-    top: 12px;
-    right: 9px;
-    height: 22px;
-    width: auto;
-    -webkit-transition: -webkit-transform 0.15s;
-    -moz-transition: -moz-transform 0.15s;
-    -o-transition: -o-transform 0.15s;
-    -ms-transition: -ms-transform 0.15s;
-    transition: transform 0.15s;
-}
-
-.btn-container button svg path {
-    fill: #5bda00;
-}
-
 .btn-container button.clicked {
     background-color: #4bb543;
     border: 2px solid var(--borderColor);
@@ -682,20 +652,6 @@ h6 {
     -ms-animation: bounce-in 0.3s;
     animation: bounce-in 0.3s;
     cursor: default;
-}
-
-.btn-container button.clicked svg {
-    -webkit-animation: flyaway 1.3s linear;
-    -moz-animation: flyaway 1.3s linear;
-    -o-animation: flyaway 1.3s linear;
-    -ms-animation: flyaway 1.3s linear;
-    animation: flyaway 1.3s linear;
-    top: -80px;
-    right: -1000px;
-}
-
-.btn-container button.clicked svg path {
-    fill: #5bda00;
 }
 
 @media screen and (max-width: 1200px) {

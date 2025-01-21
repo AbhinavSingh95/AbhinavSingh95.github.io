@@ -60,25 +60,45 @@ function debounce(func, wait) {
 async function handleFormSubmit(e) {
     e.preventDefault();
     const button = e.target.querySelector("button");
+    const buttonText = button.querySelector("p");
     const formData = new FormData(e.target);
 
-    // Validate form data
-    const isValid = validateForm(formData);
-    if (!isValid) {
+    // Early validation
+    if (!validateForm(formData)) {
         return;
     }
 
     try {
         button.disabled = true;
-        const response = await submitForm(formData);
+        buttonText.textContent = "Sending..."; // Show sending state
+
+        const response = await fetch(FORM_ENDPOINT, {
+            method: "POST",
+            body: formData,
+            headers: {
+                Accept: "application/json",
+            },
+        });
 
         if (!response.ok) {
-            throw new Error(`Form submission failed: ${response.statusText}`);
+            throw new Error(`Form submission failed: ${response.status}`);
         }
 
-        handleFormSuccess(e.target, button);
+        // Success handling
+        e.target.reset();
+        buttonText.textContent = "Sent!";
+        button.classList.add("clicked");
+        showNotification("Message sent successfully!", "success");
+
+        // Reset button after delay
+        setTimeout(() => {
+            button.classList.remove("clicked");
+            buttonText.textContent = "Send";
+        }, 2000);
     } catch (error) {
-        handleFormError(error);
+        console.error("Form submission error:", error);
+        buttonText.textContent = "Send"; // Reset text on error
+        showNotification("Failed to send message. Please try again.", "error");
     } finally {
         button.disabled = false;
     }
@@ -150,8 +170,8 @@ document.addEventListener("DOMContentLoaded", () => {
         dot.addEventListener("click", () => setTheme(dot.dataset.mode));
     });
 
-    // Add form submission listener
-    elements.form?.addEventListener("submit", debounce(handleFormSubmit, 500));
+    // Add form submission listener with simpler approach
+    elements.form?.addEventListener("submit", handleFormSubmit);
 });
 
 // Add CSS for notifications

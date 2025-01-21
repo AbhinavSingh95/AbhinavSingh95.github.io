@@ -1,10 +1,3 @@
-$("button").click(function () {
-    $(this).toggleClass("clicked");
-    $("button p").text(function (i, text) {
-        return text === "Sent!" ? "Send" : "Sent!";
-    });
-});
-
 const tabs = document.querySelector(".tabs");
 
 tabs.addEventListener("click", (e) => handleClick(e));
