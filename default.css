@@ -783,7 +783,6 @@ h6 {
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden; /* Prevent internal scrolling */
 }
 
 .container .tabs {
@@ -861,7 +860,6 @@ h6 {
     position: relative;
     padding: 0 15px;
     height: 240px;
-    overflow: hidden; /* Prevent internal scrolling */
 }
 
 .container .content__section {
